@@ -111,7 +111,7 @@ func (q *Queue) Remove() interface{} {
 
 // Add puts an element on the end of the queue, with mutex
 func (q *Queue) Push(elem interface{}) {
-    q.Lock()
+	q.Lock()
 	defer q.Unlock()
 
 	q.Add(elem)
@@ -127,5 +127,5 @@ func (q *Queue) Pop() interface{} {
 	if q.count <= 0 {
 		return nil
 	}
-	return q.Remove();
+	return q.Remove()
 }
